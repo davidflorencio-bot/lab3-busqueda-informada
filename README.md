@@ -1,4 +1,4 @@
-readme = """# Laboratorio N° 3 - Búsqueda informada (Greedy Best-First y A*)
+Laboratorio N° 3 - Búsqueda informada (Greedy Best-First y A*)
 
 Curso: Inteligencia Artificial - UNMSM FISI
 Estudiante: David Abraham Florencio Valenzuela
