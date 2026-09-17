@@ -1,0 +1,17 @@
+origen,destino,distancia_km
+Cusco,Abancay,195
+Abancay,Andahuaylas,138
+Abancay,Puquio,350
+Andahuaylas,Ayacucho,260
+Ayacucho,Huancavelica,245
+Ayacucho,Pisco,320
+Huancavelica,Huancayo,147
+Huancayo,La Oroya,125
+La Oroya,Lima,187
+Puquio,Nazca,155
+Nasca ,Ica,145
+Ica,Pisco,75
+Pisco,Chincha,60
+Chincha,Lima,200
+Chincha,Lima,200
+ Lima,La Oroya,
