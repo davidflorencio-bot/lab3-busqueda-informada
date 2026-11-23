@@ -61,24 +61,29 @@ def bfs(G, inicio, meta):
 
 
 def dfs(G, inicio, meta):
+    """Pila explicita; vecinos apilados en orden alfabetico inverso.
+    Se marca como cerrado al EXPANDIR: una ciudad puede quedar apilada mas de
+    una vez y las copias repetidas se descartan al desapilarlas."""
     m = Metricas('DFS')
-    padre = {inicio: None}
-    visitados = {inicio}
-    frontera = [inicio]
+    padre = {}
+    frontera = [(inicio, None)]         # (ciudad, desde donde se apilo)
     m.generar()
+    cerrados = set()
     while frontera:
         m.observar_frontera(len(frontera))
-        n = frontera.pop()
+        n, p = frontera.pop()
+        if n in cerrados:               # entrada obsoleta: no cuenta
+            continue
+        padre[n] = p
         m.expandir()
         if n == meta:
             camino = reconstruir(padre, meta)
             return camino, costo_camino(G, camino), m
+        cerrados.add(n)
         for vecino, _c in reversed(G[n]):
-            if vecino not in visitados:
-                visitados.add(vecino)
-                padre[vecino] = n
+            if vecino not in cerrados:
+                frontera.append((vecino, n))
                 m.generar()
-                frontera.append(vecino)
     return None, None, m
 
 
